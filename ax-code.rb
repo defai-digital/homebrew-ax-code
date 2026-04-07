@@ -12,7 +12,7 @@ class AxCode < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/defai-digital/ax-code/releases/download/v2.12.0/ax-code-darwin-arm64.zip"
-      sha256 "e126889199d9b1120bb56341dfe822eb8685a0eb8a1edfd8a27583780c1969fc"
+      sha256 "86884a173bd57b63c19b698cab59d22b685a05166e85bc119deeafbbcd57a39f"
       def install
         bin.install "ax-code"
       end
@@ -22,7 +22,7 @@ class AxCode < Formula
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
       url "https://github.com/defai-digital/ax-code/releases/download/v2.12.0/ax-code-linux-x64.tar.gz"
-      sha256 "b30877cd74ccb05cd92c2df1368f8ab4a6fa7af0674b71678ab65c7c68f3d9d2"
+      sha256 "0829f929f1ccb4dca7d56774094a33e3d197734d6e6cc847ef50aea5567b812d"
       def install
         bin.install "ax-code"
       end
