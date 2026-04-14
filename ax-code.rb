@@ -5,7 +5,7 @@
 class AxCode < Formula
   desc "Sovereign AI coding agent — provider-agnostic, LSP-first"
   homepage "https://github.com/defai-digital/ax-code"
-  version "3.1.3"
+  version "3.1.4"
 
   depends_on "ripgrep"
 
@@ -14,8 +14,8 @@ class AxCode < Formula
       odie "macOS Intel is not supported. ax-code supports macOS arm64 only."
     end
     if Hardware::CPU.arm?
-      url "https://github.com/defai-digital/ax-code/releases/download/v3.1.3/ax-code-darwin-arm64.zip"
-      sha256 "05efa4ae9807e6676b3b238352514ba15b224c2480304512452a06d1c2eb4908"
+      url "https://github.com/defai-digital/ax-code/releases/download/v3.1.4/ax-code-darwin-arm64.zip"
+      sha256 "a7268c0b1f0b6f82a2e91bf44109819e3e93d28815741518b243a3e81980da8b"
       def install
         bin.install "ax-code"
       end
@@ -24,15 +24,15 @@ class AxCode < Formula
 
   on_linux do
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/defai-digital/ax-code/releases/download/v3.1.3/ax-code-linux-arm64.tar.gz"
-      sha256 "fed5e956dec9b96d88f88e0ff8339e2fead49983006dbfb5dafdc9d4cdcab928"
+      url "https://github.com/defai-digital/ax-code/releases/download/v3.1.4/ax-code-linux-arm64.tar.gz"
+      sha256 "d252b9d3cde4335bfcfe3ab3bc27bd4ed77c577d83c43f8a7a0fe223bbd02277"
       def install
         bin.install "ax-code"
       end
     end
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/defai-digital/ax-code/releases/download/v3.1.3/ax-code-linux-x64.tar.gz"
-      sha256 "bc2a7e4bc70126e39908df0df748815b8cb44899168ec1aaddf54fa0b49b320a"
+      url "https://github.com/defai-digital/ax-code/releases/download/v3.1.4/ax-code-linux-x64.tar.gz"
+      sha256 "efc4d7588c91b5200feb7373e25ee899e1445c7c1694baa7c350ee90496f4627"
       def install
         bin.install "ax-code"
       end
