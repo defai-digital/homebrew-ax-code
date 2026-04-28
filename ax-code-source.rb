@@ -8,15 +8,14 @@
 # bun build --compile × Worker bug class that affects the compiled
 # binary on some terminals (oven-sh/bun#26762, #27766, #29124).
 #
-# This is the additive opt-in formula introduced by ADR-002 Phase 2.
-# The default `ax-code` formula continues to ship the compiled binary
-# until ADR-002 Phase 3 flips the default.
+# Compatibility alias for the transitional source-channel formula.
+# The default `ax-code` formula now uses the same source+bun runtime.
 class AxCodeSource < Formula
   desc "Sovereign AI coding agent (source distribution)"
   homepage "https://github.com/defai-digital/ax-code"
-  url "https://registry.npmjs.org/@defai.digital/ax-code-source/-/ax-code-source-4.3.0.tgz"
-  sha256 "3e36c59c8f0a075cad1dd79d6015c5b951f4961587f5ee167234df2b75e70efd"
-  version "4.3.0"
+  url "https://registry.npmjs.org/@defai.digital/ax-code-source/-/ax-code-source-4.3.1.tgz"
+  sha256 "9605e29635650f834df4241c2473ac241fd98af3ba31045719f2aa25ae8e92c2"
+  version "4.3.1"
   license "MIT"
 
   depends_on "bun"
