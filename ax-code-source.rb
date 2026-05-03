@@ -11,9 +11,9 @@
 class AxCodeSource < Formula
   desc "Sovereign AI coding agent (source distribution)"
   homepage "https://github.com/defai-digital/ax-code"
-  url "https://registry.npmjs.org/@defai.digital/ax-code-source/-/ax-code-source-4.6.6.tgz"
-  sha256 "c2f6052f7863f1633de24749b4876911c325f3b99ed9360bb79c3ec8e562446f"
-  version "4.6.6"
+  url "https://registry.npmjs.org/@defai.digital/ax-code-source/-/ax-code-source-4.6.7.tgz"
+  sha256 "5187f51a6cda3fb70f7fab60d5bba448111e5565806eb87518a65e4a0a0007d9"
+  version "4.6.7"
   license "MIT"
 
   depends_on "bun"
