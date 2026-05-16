@@ -8,22 +8,22 @@
 class AxCode < Formula
   desc "Sovereign AI coding agent — provider-agnostic, LSP-first"
   homepage "https://github.com/defai-digital/ax-code"
-  version "5.2.1"
+  version "5.2.2"
   license "MIT"
 
   on_macos do
     depends_on arch: :arm64
-    url "https://github.com/defai-digital/ax-code/releases/download/v5.2.1/ax-code-darwin-arm64.zip"
-    sha256 "e9189790e10acb2700d6df5862f32664b9f9e0e2e36bc364715d8aaf8d060c5f"
+    url "https://github.com/defai-digital/ax-code/releases/download/v5.2.2/ax-code-darwin-arm64.zip"
+    sha256 "d070d97f393ab0d77a2bd4aa9a50aaa1f236f97cbf47c22e687d4759d306e120"
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/defai-digital/ax-code/releases/download/v5.2.1/ax-code-linux-arm64.tar.gz"
-      sha256 "8f62e246f72ea6fd769d640ba57432171f019683311123f46064c273d1405069"
+      url "https://github.com/defai-digital/ax-code/releases/download/v5.2.2/ax-code-linux-arm64.tar.gz"
+      sha256 "5eedbb55b598fc3e9233a40993d5fc76f5259011aa5d558cd959fc49e5c2f02b"
     else
-      url "https://github.com/defai-digital/ax-code/releases/download/v5.2.1/ax-code-linux-x64-baseline.tar.gz"
-      sha256 "c762373f139431342c0684ec5ca66ffecde053a3cc81c8488409486d59e6abeb"
+      url "https://github.com/defai-digital/ax-code/releases/download/v5.2.2/ax-code-linux-x64-baseline.tar.gz"
+      sha256 "e16c0d495cd898b8a5588215ac762eb28e41384d319c4bf76e650444bf95a2e4"
     end
   end
 
