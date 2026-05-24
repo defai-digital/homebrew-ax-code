@@ -5,9 +5,9 @@
 class AxCodeSource < Formula
   desc "Sovereign AI coding agent — provider-agnostic, LSP-first (source distribution)"
   homepage "https://github.com/defai-digital/ax-code"
-  url "https://github.com/defai-digital/ax-code/archive/refs/tags/v5.4.2.tar.gz"
-  sha256 "e81372f6f3b6462e7b0a4f5a3690f5a04525a78bbd8f746da925cc3a816010f6"
-  version "5.4.2"
+  url "https://github.com/defai-digital/ax-code/archive/refs/tags/v5.5.0.tar.gz"
+  sha256 "e606c54014dd71ff927228c369ee42e6c7c23a048d1354ff59f45ff86ff97f29"
+  version "5.5.0"
   license "MIT"
 
   depends_on "bun"
