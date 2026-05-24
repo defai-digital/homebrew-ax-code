@@ -16,17 +16,20 @@ class AxCode < Formula
   def install
     libexec.install Dir["*"]
 
-    cwd = "#{libexec}/packages/ax-code"
-    entry = "#{libexec}/packages/ax-code/src/index.ts"
+    # Install workspace dependencies so @ax-code/* packages resolve correctly.
+    system Formula["bun"].opt_bin/"bun", "install", "--cwd", libexec, "--ignore-scripts", "--frozen-lockfile"
+
+    cwd = "\#{libexec}/packages/ax-code"
+    entry = "\#{libexec}/packages/ax-code/src/index.ts"
 
     (bin/"ax-code").write <<~SH
       #!/bin/sh
-      AX_CODE_ORIGINAL_CWD="$(pwd)" exec "#{Formula["bun"].opt_bin}/bun" run --cwd "#{cwd}" --conditions=browser "#{entry}" "$@"
+      AX_CODE_ORIGINAL_CWD="$(pwd)" exec "\#{Formula["bun"].opt_bin}/bun" run --cwd "\#{cwd}" --conditions=browser "\#{entry}" "$@"
     SH
     chmod 0755, bin/"ax-code"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/ax-code --version")
+    assert_match version.to_s, shell_output("\#{bin}/ax-code --version")
   end
 end
