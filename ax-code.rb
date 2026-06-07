@@ -13,7 +13,7 @@ class AxCode < Formula
   on_macos do
     depends_on arch: :arm64
     url "https://github.com/defai-digital/ax-code/releases/download/v5.11.5/ax-code-darwin-arm64.zip"
-    sha256 "3f9a96794f7bf0f229d2ea185e6a12e1d84b1bfc973596b95f4679a36a090b41"
+    sha256 "460611a7819393e80406bd44e2eb1deeed50af02913f5afbdfe16ac06d8e5229"
   end
 
   depends_on "ripgrep"
