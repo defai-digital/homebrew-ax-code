@@ -17,7 +17,7 @@ class AxCode < Formula
   on_macos do
     depends_on arch: :arm64
     url "https://github.com/defai-digital/ax-code/releases/download/v6.7.4/ax-code-darwin-arm64.zip"
-    sha256 "6d8aa146c4b0f60101d21776fe70c3a7f8d088be6bf0ecf7a7becefb1fcee011"
+    sha256 "0f69435691fe599653b9092141683b9c49847a8c95b2c3daaf8d0beec8976cf4"
   end
 
   depends_on "node"
