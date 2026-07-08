@@ -11,13 +11,13 @@
 class AxCode < Formula
   desc "Sovereign AI coding agent — provider-agnostic, LSP-first"
   homepage "https://github.com/defai-digital/ax-code"
-  version "6.10.2"
+  version "6.10.3"
   license "MIT"
 
   on_macos do
     depends_on arch: :arm64
-    url "https://github.com/defai-digital/ax-code/releases/download/v6.10.2/ax-code-darwin-arm64.zip"
-    sha256 "dffbb65ce97ff4facf9f14b9dc2d00e71d5fa2da6ae08766eeed539d2ef25d96"
+    url "https://github.com/defai-digital/ax-code/releases/download/v6.10.3/ax-code-darwin-arm64.zip"
+    sha256 "6b21935f209630613a2aa6e4888ddf5aaa243f248be72f7aade22e479be288a7"
   end
 
   depends_on "node"
@@ -51,6 +51,27 @@ class AxCode < Formula
 
     chmod 0755, gz.dirname
     system "gunzip", "--", gz
+  end
+
+  # Homebrew refuses to link any formula while an installed cask shares its
+  # token, and upgrade cleanup then removes the previously linked keg — the
+  # ax-code command silently vanishes from PATH. The Desktop cask now ships as
+  # "ax-code-desktop", but installs of its short-lived "ax-code" token still
+  # trigger the skip; give those users the exact recovery commands.
+  def caveats
+    return unless (HOMEBREW_PREFIX/"Caskroom/ax-code").directory?
+
+    <<~EOS
+      The deprecated "ax-code" Desktop cask is installed, so Homebrew skips
+      linking this formula and the ax-code command may be missing from PATH.
+
+      Restore the CLI with:
+        brew link ax-code
+        hash -r
+
+      Then move the Desktop app to its renamed cask:
+        brew upgrade --cask ax-code
+    EOS
   end
 
   test do
