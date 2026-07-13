@@ -11,13 +11,13 @@
 class AxCode < Formula
   desc "Sovereign AI coding agent — provider-agnostic, LSP-first"
   homepage "https://github.com/defai-digital/ax-code"
-  version "6.11.0"
+  version "7.0.0"
   license "MIT"
 
   on_macos do
     depends_on arch: :arm64
-    url "https://github.com/defai-digital/ax-code/releases/download/v6.11.0/ax-code-darwin-arm64.zip"
-    sha256 "96c3dde93f7556e3b8597d79148f66c0f2011fae8b773a45f9964f50dca6af3d"
+    url "https://github.com/defai-digital/ax-code/releases/download/v7.0.0/ax-code-darwin-arm64.zip"
+    sha256 "ee62c44851b85e7020d422b4d3cf3c8fd3f9e396bebf2ca4eeea007fe9391329"
   end
 
   depends_on "node"
