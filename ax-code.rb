@@ -11,15 +11,13 @@
 class AxCode < Formula
   desc "Sovereign AI coding agent — provider-agnostic, LSP-first"
   homepage "https://github.com/defai-digital/ax-code"
+  url "https://github.com/defai-digital/ax-code/releases/download/v7.2.0/ax-code-darwin-arm64.zip"
   version "7.2.0"
-  license "MIT"
+  sha256 "a9a47594a006850dec438b9e3243cf0089fda236df0049bc7cd89012bad413b8"
+  license "Apache-2.0"
 
-  on_macos do
-    depends_on arch: :arm64
-    url "https://github.com/defai-digital/ax-code/releases/download/v7.2.0/ax-code-darwin-arm64.zip"
-    sha256 "a9a47594a006850dec438b9e3243cf0089fda236df0049bc7cd89012bad413b8"
-  end
-
+  depends_on arch: :arm64
+  depends_on :macos
   depends_on "node"
   depends_on "ripgrep"
 
@@ -37,7 +35,7 @@ class AxCode < Formula
     libexec.install Dir["*"]
     (bin/"ax-code").write <<~SH
       #!/bin/sh
-      exec "#{Formula["node"].opt_bin}/node" --experimental-ffi --disable-warning=ExperimentalWarning "#{libexec}/lib/index-node-tui.js" "$@"
+      exec "#{formula_opt_bin("node")}/node" --experimental-ffi --disable-warning=ExperimentalWarning "#{libexec}/lib/index-node-tui.js" "$@"
     SH
     chmod 0755, bin/"ax-code"
 
