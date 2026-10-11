@@ -1,37 +1,43 @@
-# Homebrew Tap for AX Code CLI
+# Legacy AX Code Homebrew Tap
 
-This tap publishes the macOS Homebrew formula for the AX Code CLI.
+AX Code has moved to the shared
+[`defai-digital/homebrew-tap`](https://github.com/defai-digital/homebrew-tap).
+This repository contains migration metadata only. It no longer publishes an
+AX Code formula and remains available so existing installations can migrate.
 
-AX Code source code lives in the AX Code monorepo:
-
-```text
-https://github.com/defai-digital/ax-code
-```
-
-This Homebrew tap remains separate because Homebrew taps are distribution
-indexes, not source-code repositories.
-
-## Install
-
-Use the canonical `ax-code` formula:
+## New installations
 
 ```bash
-brew install defai-digital/ax-code/ax-code
+brew install defai-digital/tap/ax-code
 ```
 
-## Update
+## Migrate an existing installation
+
+Add the shared tap before updating. Homebrew uses `tap_migrations.json` to move
+the installed formula's tap ownership during `brew update`:
 
 ```bash
-brew upgrade ax-code
+brew tap defai-digital/tap
+brew trust --formula defai-digital/tap/ax-code
+brew update
+brew upgrade defai-digital/tap/ax-code
+brew info defai-digital/tap/ax-code
 ```
 
-## Distribution Type
+After confirming the installation uses the shared tap:
 
-`ax-code` is a command-line tool, so it is distributed as a Homebrew formula.
-The macOS desktop app is distributed separately as a cask from
-[`defai-digital/homebrew-ax-code-desktop`](https://github.com/defai-digital/homebrew-ax-code-desktop).
+```bash
+brew untap defai-digital/ax-code
+```
 
-## Release Source
+If Homebrew still reports the old tap, run
+`brew reinstall defai-digital/tap/ax-code` before untapping it.
 
-AX Code releases are published from the main
-[`defai-digital/ax-code` repository](https://github.com/defai-digital/ax-code/releases).
+## Maintenance
+
+Keep this repository accessible as a migration entry point. Do not restore
+`ax-code.rb` or publish release updates here; all AX Code formula updates belong
+in `Formula/ax-code.rb` in the shared tap.
+
+Source and signed runtime releases remain in
+[`defai-digital/ax-code`](https://github.com/defai-digital/ax-code).
