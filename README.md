@@ -39,5 +39,6 @@ Keep this repository accessible as a migration entry point. Do not restore
 `ax-code.rb` or publish release updates here; all AX Code formula updates belong
 in `Formula/ax-code.rb` in the shared tap.
 
-Source and signed runtime releases remain in
-[`defai-digital/ax-code`](https://github.com/defai-digital/ax-code).
+AX Code source is maintained privately. Public installation, upgrade and support
+guidance is available at [ax-code.app](https://ax-code.app/en/docs/). Signed
+runtime downloads remain available at [download.ax-code.com](https://download.ax-code.com/releases.json).
